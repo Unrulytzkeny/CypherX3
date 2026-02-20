@@ -1,6 +1,6 @@
 {
   "name": "CypherX",
-  "version": "1.8.9",
+  "version": "2.0.0",
   "description": "Deployment script for CypherX",
   "main": "index.js",
   "engines": {
