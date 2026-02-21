@@ -1,37 +1,38 @@
 {
   "name": "CypherX",
   "description": "CypherX, your friendly assistant!",
-  "logo": "https://i.ibb.co/nqsRcKDB/Xploader4.jpg",
-  "keywords": [],
-  "repository": "https://github.com/TristanCage/CypherX",
+  "repository": "https://github.com/Dark-Xploit/CypherX",
   "stack": "container",
-  "addons": [
-    {
-      "plan": "heroku-postgresql"
+
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-2x"
     }
+  },
+
+  "addons": [
+    { "plan": "heroku-postgresql" }
   ],
+
   "scripts": {
     "start": "node index.js"
   },
-"env": {
-  "SESSION_ID": {
-    "description": "Must begin with 'XPLOADER-BOT:~' or 'CYPHER-X:~'.",
-    "value": "",
-    "required": false
-  }
-},
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
+
+  "env": {
+    "SESSION_ID": {
+      "description": "Must begin with 'XPLOADER-BOT:~' or 'CYPHER-X:~'.",
+      "required": false
     },
-    {
-      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    "NODE_ENV": {
+      "value": "production"
     }
+  },
+
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git" },
+    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" },
+    { "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git" }
   ]
 }
